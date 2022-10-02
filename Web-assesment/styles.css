@@ -1,0 +1,95 @@
+body {
+    display: flex;
+}
+
+main {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 1em;
+    grid-template-areas: 
+    "a, b"
+    "c, d";
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #333;
+    height: 200px;
+    width: 200px;
+    padding: 0.5em;
+    transition-duration: 1s;
+}
+
+.a {
+    grid-area: a;
+}
+
+.b {
+    grid-area: b;
+}
+
+.c {
+    grid-area: c;
+}
+
+.d {
+    grid-area: d;
+}
+
+section h1 {
+    font-size: 2em;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1em;
+    font-family: Helvetica;
+    font-weight: 1000;
+}
+
+p {
+    font-size: 15px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #333;
+    margin: 0em;
+} 
+
+div {
+    color: #ff69b4;
+}
+
+@keyframes bounce {
+    60%, 80%, to {
+        transform: translateX(150px);
+        animation-timing-function: ease;
+    }
+    70% {transform: translateX(50px);}
+    90% {transform: translateX(100px);}
+}
+
+@keyframes elastic-grow {
+    from { transform: scale(0); }
+    70% {
+        transform: scale(1.1);
+        animation-timing-function:cubic-bezier(.755,.05,.855,.06)
+    }
+}
+
+#colourMorph {
+    border: 1px solid #333;
+    border-radius: 1em;
+    transition-duration: 2s;
+    /* uncomment this animation to see the bounce effect I was working on. */
+    /* Couldn't quite get it because it snaps at the end. */
+    /* animation: bounce 4s cubic-bezier(.755,.05,.855,.06); */
+    animation: elastic-grow 4s;
+}
+
+
